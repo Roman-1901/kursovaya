@@ -1,8 +1,8 @@
 public class Methods {
+
     public static void informationOfEmployees(Employee[] array) {
         for (int i = 0; i < array.length; i++) {
-            System.out.println("id сотрудника: " + array[i].getId() + ", ФИО: " + array[i].getSurName() + " " + array[i].getName() + " " + array[i].getFatherName() +
-                    ", Зарплата: " + String.format("%.2f", array[i].getSalary()) + "руб. Отдел: " + array[i].getDepartment());
+            System.out.println(array[i].toString());
         }
     }
 
@@ -18,6 +18,21 @@ public class Methods {
         return sum;
     }
 
+
+    public static void minSalaryByDepartment(Employee[] array, int numDepartment) {
+        double min = calculationOfSum(array);
+        for (int i = 0; i < array.length; i++) {
+            if (array[i].getDepartment() == numDepartment && array[i].getSalary() <= min) {
+                min = array[i].getSalary();
+            }
+        }
+        for (int i = 0; i < array.length; i++) {
+            if (array[i].getDepartment() == numDepartment && array[i].getSalary() == min) {
+                System.out.println("ФИО: " + array[i].getSurName() + " " + array[i].getName() + " " + array[i].getFatherName() +
+                        ", Зарплата: " + String.format("%.2f", array[i].getSalary()) + "руб.");
+            }
+        }
+    }
 
     public static void minSalary(Employee[] array) {
         double min = array[0].getSalary();
@@ -58,6 +73,12 @@ public class Methods {
         System.out.println("ФИО всех сотрудников: ");
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i].getSurName() + " " + array[i].getName() + " " + array[i].getFatherName());
+        }
+    }
+
+    public static void indexOfSalary(Employee[] array) {
+        for (int i = 0; i < array.length; i++) {
+            array[i].setSalary(array[i].getSalary() * 1.05);
         }
     }
 }
