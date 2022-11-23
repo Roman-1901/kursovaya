@@ -13,13 +13,20 @@ public class MainProgram {
         employee[9] = new Employee("Галина", "Кирьянова", "Дмитриевна", 3, 85000);
 
         Methods getInformation = new Methods();
-        getInformation.indexOfSalary(employee); //---Индексация зарплаты на 5%
+//        getInformation.indexOfSalary(employee); //---Индексация зарплаты на 5%
+        getInformation.indexByDepartment(employee,1,5);
         getInformation.informationOfEmployees(employee);
         System.out.println("");
-        getInformation.minSalaryByDepartment(employee,4);
+        getInformation.minSalaryByDepartment(employee,5);
+        getInformation.employeesByDepartment(employee,3);
+ //       getInformation.numEqualOne(employee, 90000);
+        getInformation.numEqualTwo(employee, 90000);
+//        getInformation.sumByDepartment(employee,3);
+ //       getInformation.avgByDepartment(employee,1);
+
 //        getInformation.sumOfMonth(employee);
 //        System.out.println("");
-//        getInformation.minSalary(employee);
+ //      getInformation.minSalary(employee);
 //        System.out.println("");
 //        getInformation.maxSalary(employee);
 //        System.out.println("");
